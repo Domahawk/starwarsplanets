@@ -1,0 +1,13 @@
+.planetName {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.planetItems {
+    padding: 5px;
+    width:20vw;
+    min-width: 150px;
+    height: fit-content;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+}
