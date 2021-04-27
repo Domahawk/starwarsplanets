@@ -7,8 +7,7 @@ const Residents = ({ residents }) => {
             fetch(residents)
             .then(resp => resp.json())
             .then(data => setResident(data.name)), [])
-            
-
+        
     return (
         <p className='Residents'>{ resident }</p>
         
