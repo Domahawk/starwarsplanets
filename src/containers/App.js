@@ -21,16 +21,19 @@ class App extends Component {
   render() {
     const { planets } = this.state;
     return (
-      <div className='bodyAll'>
+      <div className='App'>
         <header className='App-header'>
         This site makes calls to swapi.dev api for data on Star Wars planets.
         </header>
-        <div className='intro'>
-        <h1 className='introh1'>STAR WARS <br/> PLANETS</h1>     
-        </div>  
-        <div className='App-MainComponent'>
-          <PlanetList planetsforchild = {planets}/>          
-        </div> 
+        <div className='bodyAll'>
+          <div className='intro'>
+            <h1 className='introh1'>STAR WARS <br/> PLANETS</h1>     
+          </div>  
+          <div className='App-MainComponent'>
+            <PlanetList planetsforchild = {planets}/>
+          </div>   
+        </div>
+
       </div>
     )
   }

@@ -1,3 +1,17 @@
-.Residents {
+.residentsElement {
+    display: grid;
+    justify-content: center;
+}
+
+.residents {
     text-align: center;
+    text-decoration: underline;
+    color: yellow;
+    cursor: url('./cursor.cur'), auto;
+}
+
+.residentInfo {
+    display: grid;
+    justify-items: left;
+    justify-content: left;
 }
