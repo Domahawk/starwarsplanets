@@ -1,13 +1,29 @@
+.planetAll {
+    display: grid;
+    justify-content: center;
+    height: fit-content;
+    margin-bottom: 5vh;
+    width: 400px;
+    min-width: 300px;
+}
+
+.planetBackground {
+    background-color: black;   
+    max-width: fit-content;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    border-radius: 50%/100px;
+    box-shadow: 0 0 3px 3px yellow;
+}
+
 .planetName {
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 .planetItems {
     padding: 5px;
-    width:20vw;
-    min-width: 150px;
-    height: fit-content;
-    margin: 10px 10px 10px 10px;
+    min-width: fit-content;
     text-align: center;
+    margin-bottom: 5vh;
 }
