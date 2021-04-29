@@ -13,9 +13,13 @@ const Residents = ({ residents, setID, keyI, stateID }) => {
     const visibilityHandle = () => {
         if (stateID !== keyI) {
             setID(keyI);
+        } else {
+            setID('');
         }
     }
-//onclick set key i ako je key jednak stateu display ako ne prazno
+//onclick set keyI u parent stateu. 
+//ako je keyI različit od stateID vrijednosti ne prikazuj ništa.
+//ako se keyI isti kao stateID pokaži podatke
     return (
         <div className='residentsElement'>
             <div>
