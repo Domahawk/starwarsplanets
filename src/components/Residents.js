@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './Residents.css'
 
-const Residents = ({ residents }) => {  
+const Residents = ({ key, residents }) => {  
     const [ resident, setResident ] = useState(residents);
-    const [ visibility, setVisibility] = useState('invisible');
+    const [ visibility, setVisibility ] = useState('invisible');
     
-    useEffect((resident) =>
+    useEffect(() =>
         fetch(residents)
         .then(resp => resp.json())
-        .then(data => setResident(data)), [])
-
-    const showHide = () => {
+        .then(data => setResident(data)))
+        
+    const visibilityHandle = () => {
         if (visibility === 'invisible') {
-            setVisibility('visible');
+            setVisibility('visible')
         } else if (visibility === 'visible') {
-            setVisibility('invisible'); 
-        } else {
-            setVisibility('invisible');
+            setVisibility('invisible')
         }
     }
-        
+
     return (
         <div className='residentsElement'>
             <div>
-               <p className='residents' onClick={showHide}> {resident.name}</p> 
+               <p className='residents' onClick={visibilityHandle}> {resident.name}</p> 
             </div>
             {visibility === 'invisible' && (null)}
             {visibility === 'visible' && (
