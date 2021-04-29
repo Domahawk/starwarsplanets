@@ -11,7 +11,7 @@ const Planet = ({ name, population, gravity, terrain, residents }) => {
   }
 
   const residentListComponent = residents.map((residents, i) =>
-   {
+   {  
       return <Residents
       key={i}
       keyI={i}

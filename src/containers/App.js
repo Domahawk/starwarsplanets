@@ -12,10 +12,10 @@ class App extends Component {
   }
 
   componentDidMount () {
-    fetch('https://swapi.py4e.com/api/planets/')
-    .then(resp => resp.json())
-    .then(data => {this.setState({ planets: data.results })})
-  }
+      fetch('https://swapi.py4e.com/api/planets/')
+      .then(resp => resp.json())
+      .then(data => {this.setState({ planets: data.results })})
+    } 
   
   render() {
     const { planets } = this.state;

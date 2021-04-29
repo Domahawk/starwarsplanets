@@ -4,11 +4,11 @@ import './Residents.css'
 const Residents = ({ residents, setID, keyI, stateID }) => {  
     const [ resident, setResident ] = useState(residents);
     
-    useEffect(() =>
-        fetch(residents)
-        .then(resp => resp.json())
-        .then(data => setResident(data))
-        )
+   useEffect(() =>
+    fetch(residents)
+    .then(resp => resp.json())
+    .then(data => setResident(data))
+    , []) // [] jako bitno, ako nema [] na kraju useEffect uzrokuje infinite loop
         
     const visibilityHandle = () => {
         if (stateID !== keyI) {
