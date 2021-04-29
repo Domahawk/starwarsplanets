@@ -4,10 +4,11 @@ import './Residents.css'
 const Residents = ({ residents }) => {  
     const [ resident, setResident ] = useState(residents);
     const [ visibility, setVisibility] = useState('invisible');
-        useEffect((resident) =>
-            fetch(residents)
-            .then(resp => resp.json())
-            .then(data => setResident(data)), [])
+    
+    useEffect((resident) =>
+        fetch(residents)
+        .then(resp => resp.json())
+        .then(data => setResident(data)), [])
 
     const showHide = () => {
         if (visibility === 'invisible') {
@@ -34,7 +35,6 @@ const Residents = ({ residents }) => {
                     <p>Gender: {resident.gender}</p>
                 </div>
             </div>
-            
             )}
         </div>
         

@@ -3,11 +3,12 @@ import Residents from './Residents';
 import './Planet.css';
 
 const Planet = ({ name, population, gravity, terrain, residents }) => {
+
   const residentListComponent = residents.map((residents, i) =>
    {
       return <Residents
       key={i}
-      residents ={residents}/>
+      residents={residents}/>
   })
 
   return (
