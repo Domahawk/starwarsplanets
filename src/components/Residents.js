@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import './Residents.css'
 
-const Residents = ({ key, residents }) => {  
+const Residents = ({ residents, setID, keyI, stateID }) => {  
     const [ resident, setResident ] = useState(residents);
-    const [ visibility, setVisibility ] = useState('invisible');
     
     useEffect(() =>
         fetch(residents)
         .then(resp => resp.json())
-        .then(data => setResident(data)))
+        .then(data => setResident(data))
+        )
         
     const visibilityHandle = () => {
-        if (visibility === 'invisible') {
-            setVisibility('visible')
-        } else if (visibility === 'visible') {
-            setVisibility('invisible')
+        if (stateID !== keyI) {
+            setID(keyI);
         }
     }
-
+//onclick set key i ako je key jednak stateu display ako ne prazno
     return (
         <div className='residentsElement'>
             <div>
                <p className='residents' onClick={visibilityHandle}> {resident.name}</p> 
             </div>
-            {visibility === 'invisible' && (null)}
-            {visibility === 'visible' && (
+            {stateID !== keyI && (null)}
+            {stateID === keyI && (
             <div>
                 <div className='residentInfo'>
                     <p>Height: {resident.height}</p>

@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Residents from './Residents';
 import './Planet.css';
 
 const Planet = ({ name, population, gravity, terrain, residents }) => {
+  
+  const [ childID, setChildID ] = useState('')
+
+  const setID = (index) => {
+    setChildID(index);
+  }
 
   const residentListComponent = residents.map((residents, i) =>
    {
       return <Residents
       key={i}
-      residents={residents}/>
+      keyI={i}
+      residents={residents}
+      setID={setID}
+      stateID={childID}/>
   })
 
   return (
