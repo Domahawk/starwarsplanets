@@ -8,7 +8,7 @@ const Residents = ({ residents, setID, keyI, stateID }) => {
     fetch(residents)
     .then(resp => resp.json())
     .then(data => setResident(data))
-    , []) // [] jako bitno, ako nema [] na kraju useEffect uzrokuje infinite loop
+    , [residents]) // [] jako bitno, ako nema [] na kraju useEffect uzrokuje infinite loop
         
     const visibilityHandle = () => {
         if (stateID !== keyI) {

@@ -10,12 +10,12 @@ const Planet = ({ name, population, gravity, terrain, residents }) => {
     setChildID(index);
   }
 
-  const residentListComponent = residents.map((residents, i) =>
+  const residentListComponent = residents.map((resident, i) =>
    {  
       return <Residents
       key={i}
       keyI={i}
-      residents={residents}
+      residents={resident}
       setID={setID}
       stateID={childID}/>
   })
@@ -32,6 +32,9 @@ const Planet = ({ name, population, gravity, terrain, residents }) => {
           <h3>Terrain:</h3>
           <p>{terrain}</p>
           <h3>Characters from here:</h3>
+          { residents.length === 0 && (
+            <p>No known characters</p>
+          )}
           <div>{residentListComponent}</div>
         </div>  
     </div>

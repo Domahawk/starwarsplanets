@@ -7,11 +7,11 @@ const PlanetList = ({ planetsforchild }) => {
     const planetListComponent = planetsforchild.map((planet, i) => {
         return <Planet
             key = {i}
-            name = {planetsforchild[i].name}
-            population = {planetsforchild[i].population}
-            gravity = {planetsforchild[i].gravity}
-            terrain = {planetsforchild[i].terrain}
-            residents = {planetsforchild[i].residents}/>
+            name = {planet.name}
+            population = {planet.population}
+            gravity = {planet.gravity}
+            terrain = {planet.terrain}
+            residents = {planet.residents}/>
     })
     return (
     <div className='PlanetList'>

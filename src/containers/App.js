@@ -11,13 +11,20 @@ class App extends Component {
     };
   }
 
-  componentDidMount () {
-      fetch('https://swapi.py4e.com/api/planets/')
+
+
+//let update = previous state concat planets????
+  componentDidMount () {  
+
+    for (let i=1; i<=7; i++) {       
+      fetch('https://swapi.py4e.com/api/planets/?page='+i)
       .then(resp => resp.json())
-      .then(data => {this.setState({ planets: data.results })})
-    } 
+      .then(data => this.setState({ planets: this.state.planets.concat(data.results)}))
+    }
+    
+  } 
   
-  render() {
+  render() {console.log(this.state.planets)
     const { planets } = this.state;
     return (
       <div className='App'>
@@ -29,12 +36,11 @@ class App extends Component {
             <h1 className='introh1'>STAR WARS <br/> PLANETS</h1>     
           </div>  
           <div className='App-MainComponent'>
-            <PlanetList planetsforchild = {planets}/>
+            <PlanetList planetsforchild = {planets} />
           </div>   
         </div>
-
       </div>
-    )
+    );
   }
 }
 export default App;
