@@ -22,3 +22,29 @@
     border-color: black;
     box-shadow: 0 0 3px 3px yellow;
 }
+
+.currentButton {
+    margin: 1.5vw;
+    width: 5vw;
+    height: 5vw;
+    font-size: 2.5vw;
+    background-color: #282c34;
+    color: yellow;
+    border-radius: 100%;
+    border-color: #282c34;
+    box-shadow: 0 0 3px 3px yellow;    
+}
+
+.left {
+    background-image: url('./sabreLeft.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.right {
+    background-image: url('./sabreRight.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

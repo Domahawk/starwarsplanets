@@ -26,6 +26,10 @@ class App extends Component {
         }))  
     }
 }
+  
+  arrowsHandleButton = (i) => {
+    this.setState({ currentPage: this.state.currentPage +(i)});
+  }
 
   handleButton = (i) => {
     this.setState({ currentPage: i })
@@ -40,7 +44,7 @@ class App extends Component {
   }
   
   render() {
-    const { planets, numberOfPlanets } = this.state;
+    const { planets, numberOfPlanets, currentPage } = this.state;
     return (
       <div className='App'>
         <header className='App-header'>
@@ -51,7 +55,10 @@ class App extends Component {
             <h1 className='introh1'>STAR WARS <br/> PLANETS</h1>     
           </div>  
           <div className='App-MainComponent'>
-            <PageButton planetNumber = {numberOfPlanets} handleButton = {this.handleButton}/>
+            <PageButton planetNumber = {numberOfPlanets} 
+                        handleButton = {this.handleButton} 
+                        arrows = {this.arrowsHandleButton}
+                        pageState={currentPage}/>
             <PlanetList planetsforchild = {planets} />
           </div>   
         </div>
