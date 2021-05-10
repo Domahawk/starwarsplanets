@@ -1,31 +1,46 @@
 import React, { Component } from 'react';
 import './App.css';
 import PlanetList from '../components/PlanetList';
+import PageButton from '../components/PageButton';
 
 class App extends Component {
 
   constructor () {
     super();
     this.state = {
-      planets: []
+      planets: [],
+      numberOfPlanets: 0,
+      currentPage: 1,
+      prevPage: 0
     };
   }
 
-
-
-//let update = previous state concat planets????
-  componentDidMount () {  
-
-    for (let i=1; i<=7; i++) {       
+  getData (i) {
+    if(i !== this.state.prevPage){
       fetch('https://swapi.py4e.com/api/planets/?page='+i)
-      .then(resp => resp.json())
-      .then(data => this.setState({ planets: this.state.planets.concat(data.results)}))
+        .then(resp => resp.json())
+        .then(data => this.setState({ 
+          planets: data.results,
+          numberOfPlanets: data.count,
+          prevPage: i 
+        }))  
     }
-    
-  } 
+}
+
+  handleButton = (i) => {
+    this.setState({ currentPage: i })
+  }
+
+  componentDidMount () {  
+    this.getData(this.state.currentPage);    
+  }
   
-  render() {console.log(this.state.planets)
-    const { planets } = this.state;
+  componentDidUpdate () {
+    this.getData(this.state.currentPage);
+  }
+  
+  render() {
+    const { planets, numberOfPlanets } = this.state;
     return (
       <div className='App'>
         <header className='App-header'>
@@ -36,6 +51,7 @@ class App extends Component {
             <h1 className='introh1'>STAR WARS <br/> PLANETS</h1>     
           </div>  
           <div className='App-MainComponent'>
+            <PageButton planetNumber = {numberOfPlanets} handleButton = {this.handleButton}/>
             <PlanetList planetsforchild = {planets} />
           </div>   
         </div>

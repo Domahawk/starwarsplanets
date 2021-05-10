@@ -8,7 +8,7 @@ const Residents = ({ residents, setID, keyI, stateID }) => {
     fetch(residents)
     .then(resp => resp.json())
     .then(data => setResident(data))
-    , [residents]) // [] jako bitno, ako nema [] na kraju useEffect uzrokuje infinite loop
+    , [residents])
         
     const visibilityHandle = () => {
         if (stateID !== keyI) {
@@ -17,9 +17,7 @@ const Residents = ({ residents, setID, keyI, stateID }) => {
             setID('');
         }
     }
-//onclick set keyI u parent stateu. 
-//ako je keyI različit od stateID vrijednosti ne prikazuj ništa.
-//ako se keyI isti kao stateID pokaži podatke
+
     return (
         <div className='residentsElement'>
             <div>
