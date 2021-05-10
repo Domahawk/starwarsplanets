@@ -14,5 +14,6 @@
     display: grid;
     justify-items: left;
     justify-content: left;
+    text-align: left;
     min-width: fit-content;
 }
