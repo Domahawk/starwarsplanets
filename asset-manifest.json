@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/starwarsplanets/static/css/main.7bdc8378.chunk.css",
-    "main.js": "/starwarsplanets/static/js/main.64100153.chunk.js",
-    "main.js.map": "/starwarsplanets/static/js/main.64100153.chunk.js.map",
+    "main.js": "/starwarsplanets/static/js/main.fdd43a4e.chunk.js",
+    "main.js.map": "/starwarsplanets/static/js/main.fdd43a4e.chunk.js.map",
     "runtime-main.js": "/starwarsplanets/static/js/runtime-main.5ed09174.js",
     "runtime-main.js.map": "/starwarsplanets/static/js/runtime-main.5ed09174.js.map",
     "static/js/2.f7f9abe9.chunk.js": "/starwarsplanets/static/js/2.f7f9abe9.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.5ed09174.js",
     "static/js/2.f7f9abe9.chunk.js",
     "static/css/main.7bdc8378.chunk.css",
-    "static/js/main.64100153.chunk.js"
+    "static/js/main.fdd43a4e.chunk.js"
   ]
 }
